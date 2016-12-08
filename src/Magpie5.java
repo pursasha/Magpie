@@ -37,7 +37,7 @@ public class Magpie5
 		String response = "";
 		if (statement.length() == 0)
 		{
-			response = "Say something, please.";
+			response = "Say something, please. ";
 		}
 
 		else if (findKeyword(statement, "no") >= 0)
