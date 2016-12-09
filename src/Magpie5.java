@@ -57,6 +57,10 @@ public class Magpie5
 		{
 			response = "Tell me more about your pets.";
 		}
+		else if (findKeyword(statement, "joke") >= 0)
+		{
+			response = getJoke();
+		}
 
 
 		// Responses which require transformations
@@ -277,6 +281,35 @@ public class Magpie5
 	{
 		return findKeyword (statement, goal, 0);
 	}
+	private String getJoke()
+	{
+		final int NUMBER_OF_RESPONSES = 5;
+		double r = Math.random();
+		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
+		String response = "";
+		
+		if (whichResponse == 0)
+		{
+			response= ("The ball was getting bigger, and then it hit me");
+		}
+		if (whichResponse == 1)
+		{
+			response= ("I looked in the mirror and it cracked, but then I realized you were next to me");
+		}
+		if (whichResponse == 2)
+		{
+			response= ("If you want to see a joke, take out your phone and put it on selfie mode");
+		}
+		if (whichResponse == 3)
+		{
+			response= ("You must have been born in the hioghway, because that's where most accidents happen");
+		}
+		if (whichResponse == 4)
+		{
+			response= ("You are so ugly, Hello Kitty said goodbye");
+		}
+		return response;
+	}
 	
 
 
@@ -289,6 +322,7 @@ public class Magpie5
 		Random r = new Random ();
 		return randomResponses [r.nextInt(randomResponses.length)];
 	}
+	
 	
 	private String [] randomResponses = {"Interesting, tell me more",
 			"Hmmm.",
