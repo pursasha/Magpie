@@ -58,10 +58,16 @@ public class Magpie5
 			response = "Tell me more about your pets.";
 		}
 		else if (findKeyword(statement, "joke") >= 0)
+				
 		{
 			response = getJoke();
 		}
-
+		else if (findKeyword(statement, "hi") >= 0
+				|| findKeyword(statement, "hey") >= 0
+				|| findKeyword(statement, "hello") >= 0)
+		{
+			response = "Hello, tell me about yourself";
+		}
 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
@@ -221,7 +227,7 @@ public class Magpie5
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	public int findKeyword(String statement, String goal,
+	private int findKeyword(String statement, String goal,
 			int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
