@@ -1,7 +1,7 @@
 public class Miscellaneous {
-	String[] memory = new String[10]; //memo stores up to a certain amt strings before it starts rewriting data
-	int memSlot = 0; //determines where the 
-	public boolean memory(String statement, String usage) { //memory can either store strings or access strings
+	static String[] memory = new String[10]; //memo stores up to a certain amt strings before it starts rewriting data
+	static int memSlot = 0; //determines where the string is placed at the memory array
+	public static boolean memory(String statement, String usage) { //memory can either store strings or access strings
 		boolean verify = false;
 		if (usage.compareTo("store") == 0) { //stores string in as part of the memory array
 			memory[memSlot] = statement;
