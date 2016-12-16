@@ -1,6 +1,6 @@
-
+//Alexandra
 public class DatingClass {
-//hii
+
 	public String getResponse1(String statement)
 	{
 		statement= statement.toLowerCase();
@@ -15,7 +15,11 @@ public class DatingClass {
 			{
 				response = "Of course you do. Everyone does. What would you say is your best personality trait?";	
 			}
-		if()
+		
+		if(statement.indexOf(" like ")>= 0)
+			{
+			}
+	
 			
 			else if(findKeyword(statement, "no",0) >=0 ))
 					
@@ -31,23 +35,23 @@ public class DatingClass {
 			
 			if (whichResponse == 0)
 			{
-				response= ("The ball was getting bigger, and then it hit me");
+				response= ("You know you look really good when you wear makeup");
 			}
 			if (whichResponse == 1)
 			{
-				response= ("I looked in the mirror and it cracked, but then I realized you were next to me");
+				response= ("Your eyes would be really pretty if they were blue");
 			}
 			if (whichResponse == 2)
 			{
-				response= ("If you want to see a joke, take out your phone and put it on selfie mode");
+				response= ("you are prettier than a buffalo");
 			}
 			if (whichResponse == 3)
 			{
-				response= ("You must have been born in the hioghway, because that's where most accidents happen");
+				response= ("I don't usually go for people like you... But lets see how this works out");
 			}
 			if (whichResponse == 4)
 			{
-				response= ("You are so ugly, Hello Kitty said goodbye");
+				response= ("Maybe we could talk about something else.");
 			}
 			return response;
 			}
@@ -59,7 +63,7 @@ public class DatingClass {
 
 
 		// Responses which require transformations
-		else if (findKeyword(statement, "I want to", 0) >= 0)
+		if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
 		}
@@ -101,7 +105,11 @@ public class DatingClass {
 		}
 		return response;
 	}
-	public int findKeyword(String statement, String goal,
+	
+
+
+
+public int findKeyword(String statement, String goal,
 			int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
