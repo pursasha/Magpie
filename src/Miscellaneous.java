@@ -12,7 +12,10 @@ public class Miscellaneous {
 		}
 		else if (usage.compareTo("access") == 0) { //loops through the memory array, searching for statement
 			for(int x = 0; x < memory.length; x++) {
-				if (statement.compareTo(memory[x]) == 0) {
+				if (memory[x] == null) { //passes through null elements to avoid errors
+					continue;
+				}
+				else if (statement.compareTo(memory[x]) == 0) {
 					verify = true; //change [verify] to true so it'll confirm that statement has been used recently
 				}
 			}
