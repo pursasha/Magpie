@@ -21,7 +21,7 @@ public class Magpie5
 	 */	
 	public String getGreeting()
 	{
-		return "Hello, let's talk.";
+		return "Hello, I am your date, let'a talk.";
 	}
 	
 	/**
@@ -38,6 +38,15 @@ public class Magpie5
 		if (statement.length() == 0)
 		{
 			response = "Say something, please. ";
+		}
+		else if (Miscellaneous.memory(statement, "access") == true)
+		{
+			response= "Are you brain dead? You just said that";
+		}
+		
+		else if (statement.indexOf("?") >= 0)
+		{
+			response = "That is an interesting question. What do you think?";
 		}
 
 		else if (findKeyword(statement, "no") >= 0)
@@ -57,8 +66,7 @@ public class Magpie5
 		{
 			response = "Tell me more about your pets.";
 		}
-		else if (findKeyword(statement, "joke") >= 0)
-				
+		else if (findKeyword(statement, "joke") >= 0)	
 		{
 			response = getJoke();
 		}
@@ -110,6 +118,8 @@ public class Magpie5
 				}
 			}
 		}
+		Miscellaneous.memory(statement, "store");
+
 		return response;
 	}
 	

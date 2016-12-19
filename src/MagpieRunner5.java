@@ -18,7 +18,6 @@ public class MagpieRunner5
 		System.out.println (maggie.getGreeting());
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();		
-		Miscellaneous.memory(statement, "store");
 		
 		while (!statement.equals("bye"))
 		{
