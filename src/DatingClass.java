@@ -1,30 +1,34 @@
 //Alexandra
 public class DatingClass {
+	private int x=0;
 
 	public String getResponse1(String statement)
 	{
 		statement= statement.toLowerCase();
 		String response = "";
-		int x=0;
 		if (findKeyword(statement, "Date me",0) >= 0)
 		{
 			response = "Do you want to go on a computer date?";
 			x=1;
 		}
 		if (findKeyword(statement, "yes",0) >=0 && x==1 )
-			{
-				response = "Of course you do. Everyone does. What would you say is your best personality trait?";	
-			}
+		{
+			response = "Of course you do. Everyone does. What would you say is your best personality trait?";	
+		}
 		
 		if(statement.indexOf(" like ")>= 0)
-			{
-			}
+		{
+		
+		}
 	
 			
-			else if(findKeyword(statement, "no",0) >=0 ))
+		else if(findKeyword(statement, "no",0) >=0 )
+		{
 					
 			
-					}
+		}
+		return response;
+	}
 		
 		private String datepun()
 		{
@@ -54,7 +58,7 @@ public class DatingClass {
 				response= ("Maybe we could talk about something else.");
 			}
 			return response;
-			}
+		}
 		
 		else if (findKeyword(statement, "joke") >= 0)
 		{
@@ -109,7 +113,7 @@ public class DatingClass {
 
 
 
-public int findKeyword(String statement, String goal,
+	private int findKeyword(String statement, String goal,
 			int startPos)
 	{
 		String phrase = statement.trim().toLowerCase();
