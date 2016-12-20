@@ -24,4 +24,7 @@ public class Miscellaneous {
 		}
 		return verify;
 	}
+	
+	//POS section
+	
 }
