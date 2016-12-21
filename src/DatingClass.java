@@ -56,7 +56,7 @@ public class DatingClass {
 									"Its ok, You are prettier than a buffalo",
 									"I don't usually go for ugly people... But lets see how this works out",
 									"your face is giving me nightmares!."};
-			final int NUMBER_OF_RESPONSES = 4;
+			final int NUMBER_OF_RESPONSES = responseList.length;
 			double r = Math.random();
 			int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 			return responseList[whichResponse];
