@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class MagpieRunner5
 {
 
-	public void main(String[] args)
+	public static void main(String[] args)
 	{
 		Magpie5 jokeBot = new Magpie5();
 		System.out.println (jokeBot.getGreeting());
