@@ -25,7 +25,7 @@ public class Miscellaneous {
 				}
 				if (statement.compareTo(memory[x]) == 0) {
 					verify = true; //change [verify] to true so it'll confirm that statement has been used recently
-					break; //if true, breaks the loop and goes instantly to return so that time isnt wasted
+					break; //if true, breaks the loop and goes instantly to return so that time isn't wasted
 				}
 			}
 		}
