@@ -18,7 +18,7 @@ public class Miscellaneous {
 				if (memory[x] == null) { //passes through null elements to avoid errors
 					continue;
 				}
-				for(int y = 0; y < ignoreList.length; y++) { //check for blacklisted words and ignores those words if they come up
+				for(int y = 0; y < ignoreList.length; y++) { //check for blacklisted words and ignores those words if they appear
 					if (findKeyword(memory[x], ignoreList[y]) >= 0) {
 						continue;
 					}
