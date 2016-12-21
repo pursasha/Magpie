@@ -9,7 +9,7 @@ public class Magpie5
 	 */	
 	public String getGreeting()
 	{
-		return "Hello, I am your date, let's talk.";
+		return "Hello, let's talk. Spell out date for me please";
 	}
 	
 	/**
@@ -37,11 +37,6 @@ public class Magpie5
 			response = DatingClass.getResponse1(statement);	
 			x--;
 		}
-		else if (Miscellaneous.findKeyword(statement, "date") >= 0)	
-		{
-			x = 5;
-			response = DatingClass.getResponse1(statement);			
-		}
 		else if (statement.indexOf("?") >= 0)
 		{
 			response = "That is an interesting question. What do you think?";
@@ -68,7 +63,12 @@ public class Magpie5
 		{
 			response = getJoke();
 		}
-				else if (Miscellaneous.findKeyword(statement, "hi") >= 0
+		else if (Miscellaneous.findKeyword(statement, "date") >= 0)	
+		{
+			x = 5;
+			response = DatingClass.getResponse1(statement);			
+		}
+		else if (Miscellaneous.findKeyword(statement, "hi") >= 0
 				|| Miscellaneous.findKeyword(statement, "hey") >= 0
 				|| Miscellaneous.findKeyword(statement, "hello") >= 0)
 		{
