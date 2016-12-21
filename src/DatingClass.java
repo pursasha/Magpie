@@ -8,7 +8,7 @@ public class DatingClass
 
 	public static String getResponse1(String statement) //gets customized responses from user when a certain keyword is said/
 	{
-		statement= statement.toLowerCase(); // Makes sure that there are no capitlization errors
+		statement= statement.toLowerCase(); // Makes sure that there are no capitalization errors
 		String response = "";
 		if (Miscellaneous.findKeyword(statement, "Date",0) >= 0) //uses the method findkeyword in class miscellaneous.
 		{
