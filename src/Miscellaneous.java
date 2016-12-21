@@ -6,13 +6,10 @@ public class Miscellaneous {
 	public static boolean memory(String statement, String usage) { //memory can either store strings or access strings
 		boolean verify = false;
 		if (usage.compareTo("store") == 0) { //stores string in as part of the memory array
-			if (statement.matches("yes") == false //skips storing yes and no since they are common responses
-				|| statement.matches("no") == false) {
-				memory[memSlot] = statement;
-				memSlot ++;
-				if (memSlot == memory.length-1) {
-					memSlot = 0;
-				}
+			memory[memSlot] = statement;
+			memSlot ++;
+			if (memSlot == memory.length-1) {
+				memSlot = 0;
 			}
 		}
 		else if (usage.compareTo("access") == 0) { //loops through the memory array, searching for statement
@@ -20,6 +17,10 @@ public class Miscellaneous {
 				if (memory[x] == null) { //passes through null elements to avoid errors
 					continue;
 				}
+				else if (findKeyword(memory[x], "yes") >= 0
+						||findKeyword(memory[x], "no") >= 0) {
+							continue;
+						}
 				else if (statement.compareTo(memory[x]) == 0) {
 					verify = true; //change [verify] to true so it'll confirm that statement has been used recently
 					break; //if true, breaks the loop and goes instantly to return so that time isnt wasted
