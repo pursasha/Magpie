@@ -221,7 +221,7 @@ public class Magpie5
 		String[] responseList = {"The ball was getting bigger, and then it hit me",
 					"I looked in the mirror and it cracked, but then I realized you were next to me",
 					"If you want to see a joke, take out your phone and put it on selfie mode",
-					"You must have been born in the hioghway, because that's where most accidents happen",
+					"You must have been born in the highway, because that's where most accidents happen",
 					"You are so ugly, Hello Kitty said goodbye",
 					};
 		final int NUMBER_OF_RESPONSES = 5;
@@ -244,7 +244,7 @@ public class Magpie5
 	
 	
 	private String [] randomResponses = {"Interesting, tell me more",
-			"Hmmm.",
+			"Hmmm that's cool. Could you teach me how to spell joke?",
 			"Do you really think so?",
 			"You don't say.",
 			//  All you need to do is add lines here
