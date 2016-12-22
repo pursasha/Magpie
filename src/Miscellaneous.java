@@ -19,6 +19,7 @@ public class Miscellaneous {
 				}
 				else if (findKeyword(memory[x], "yes") >= 0 //ignores certain words so that they can be used more than once
 						||findKeyword(memory[x], "no") >= 0
+						||findKeyword(memory[x], "joke") >= 0
 						||findKeyword(memory[x], "date") >= 0) {
 					continue;
 				}
