@@ -12,7 +12,7 @@ public class DatingClass
 		String response = "";
 		if (Miscellaneous.findKeyword(statement, "Date",0) >= 0) //uses the method findkeyword in class miscellaneous.
 		{
-			response = "Do you want to go on a computer date?";
+			response = "Do you want to go on a computer date? Yes or no?";
 			x=1;
 		}
 		else if (Miscellaneous.findKeyword(statement, "yes",0) >=0 && (x==1))// This x==1 will make sure that this doesnt run when they arent on a date.
