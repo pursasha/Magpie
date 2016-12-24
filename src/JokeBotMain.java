@@ -37,6 +37,10 @@ public class JokeBotMain
 			response = DatingClass.getResponse1(statement);	
 			x--;
 		}
+		else if (Tools.findKeyword(statement, "joke") >= 0)	
+		{
+			response = getJoke();
+		}
 		else if (statement.indexOf("?") >= 0)
 		{
 			response = "That is an interesting question. What do you think?";
@@ -58,10 +62,6 @@ public class JokeBotMain
 				|| Tools.findKeyword(statement, "fish") >= 0)
 		{
 			response = "Tell me more about your pets.";
-		}
-		else if (Tools.findKeyword(statement, "joke") >= 0)	
-		{
-			response = getJoke();
 		}
 		else if (Tools.findKeyword(statement, "date") >= 0)	
 		{
