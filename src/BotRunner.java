@@ -5,12 +5,12 @@ import java.util.Scanner;
  * Jia Hua Zhu, Helal Chowdhury, Alexandra Gostev
  * AP Computer Science - Java
  */
-public class MagpieRunner5
+public class BotRunner
 {
 
 	public static void main(String[] args)
 	{
-		Magpie5 jokeBot = new Magpie5();
+		JokeBotMain jokeBot = new JokeBotMain();
 		System.out.println (jokeBot.getGreeting());
 		Scanner in = new Scanner (System.in);
 		String statement = in.nextLine();		
@@ -21,5 +21,4 @@ public class MagpieRunner5
 			statement = in.nextLine();
 		}
 	}
-
 }

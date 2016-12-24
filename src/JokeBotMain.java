@@ -1,6 +1,6 @@
 //Helal
 import java.util.Random;
-public class Magpie5
+public class JokeBotMain
 {
 	private int x = 0; 
 	/**
@@ -28,7 +28,7 @@ public class Magpie5
 		{
 			response = "Say something, please. ";
 		}
-		else if (Miscellaneous.memory(statement, "access") == true)
+		else if (Tools.memory(statement, "access") == true)
 		{
 			response= "Are you brain dead? You just said that";
 		}
@@ -42,46 +42,46 @@ public class Magpie5
 			response = "That is an interesting question. What do you think?";
 		}
 
-		else if (Miscellaneous.findKeyword(statement, "no") >= 0)
+		else if (Tools.findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
-		else if (Miscellaneous.findKeyword(statement, "mother") >= 0
-				|| Miscellaneous.findKeyword(statement, "father") >= 0
-				|| Miscellaneous.findKeyword(statement, "sister") >= 0
-				|| Miscellaneous.findKeyword(statement, "brother") >= 0)
+		else if (Tools.findKeyword(statement, "mother") >= 0
+				|| Tools.findKeyword(statement, "father") >= 0
+				|| Tools.findKeyword(statement, "sister") >= 0
+				|| Tools.findKeyword(statement, "brother") >= 0)
 		{
 			response = "Tell me more about your family.";
 		}
-		else if (Miscellaneous.findKeyword(statement, "cat") >= 0
-				|| Miscellaneous.findKeyword(statement, "dog") >= 0
-				|| Miscellaneous.findKeyword(statement, "fish") >= 0)
+		else if (Tools.findKeyword(statement, "cat") >= 0
+				|| Tools.findKeyword(statement, "dog") >= 0
+				|| Tools.findKeyword(statement, "fish") >= 0)
 		{
 			response = "Tell me more about your pets.";
 		}
-		else if (Miscellaneous.findKeyword(statement, "joke") >= 0)	
+		else if (Tools.findKeyword(statement, "joke") >= 0)	
 		{
 			response = getJoke();
 		}
-		else if (Miscellaneous.findKeyword(statement, "date") >= 0)	
+		else if (Tools.findKeyword(statement, "date") >= 0)	
 		{
 			x = 5;
 			response = DatingClass.getResponse1(statement);			
 		}
-		else if (Miscellaneous.findKeyword(statement, "hi") >= 0
-				|| Miscellaneous.findKeyword(statement, "hey") >= 0
-				|| Miscellaneous.findKeyword(statement, "hello") >= 0)
+		else if (Tools.findKeyword(statement, "hi") >= 0
+				|| Tools.findKeyword(statement, "hey") >= 0
+				|| Tools.findKeyword(statement, "hello") >= 0)
 		{
 			response = "Hello, tell me about yourself";
 		}
 
 		// Responses which require transformations
-		else if (Miscellaneous.findKeyword(statement, "I want to", 0) >= 0)
+		else if (Tools.findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
 		}
 		//  Part of student solution
-		else if (Miscellaneous.findKeyword(statement, "I want", 0) >= 0)
+		else if (Tools.findKeyword(statement, "I want", 0) >= 0)
 		{
 			response = transformIWantStatement(statement);
 		}
@@ -91,10 +91,10 @@ public class Magpie5
 
 			// Look for a two word (you <something> me)
 			// pattern
-			int psn = Miscellaneous.findKeyword(statement, "you", 0);
+			int psn = Tools.findKeyword(statement, "you", 0);
 
 			if (psn >= 0
-					&& Miscellaneous.findKeyword(statement, "me", psn) >= 0)
+					&& Tools.findKeyword(statement, "me", psn) >= 0)
 			{
 				response = transformYouMeStatement(statement);
 			}
@@ -103,10 +103,10 @@ public class Magpie5
 				//  Part of student solution
 				// Look for a two word (I <something> you)
 				// pattern
-				psn = Miscellaneous.findKeyword(statement, "i", 0);
+				psn = Tools.findKeyword(statement, "i", 0);
 
 				if (psn >= 0
-						&& Miscellaneous.findKeyword(statement, "you", psn) >= 0)
+						&& Tools.findKeyword(statement, "you", psn) >= 0)
 				{
 					response = transformIYouStatement(statement);
 				}
@@ -116,7 +116,7 @@ public class Magpie5
 				}
 			}
 		}
-		Miscellaneous.memory(statement, "store");
+		Tools.memory(statement, "store");
 
 		return response;
 	}
@@ -138,7 +138,7 @@ public class Magpie5
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
-		int psn = Miscellaneous.findKeyword (statement, "I want to", 0);
+		int psn = Tools.findKeyword (statement, "I want to", 0);
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "What would it mean to " + restOfStatement + "?";
 	}
@@ -161,7 +161,7 @@ public class Magpie5
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
-		int psn = Miscellaneous.findKeyword (statement, "I want", 0);
+		int psn = Tools.findKeyword (statement, "I want", 0);
 		String restOfStatement = statement.substring(psn + 6).trim();
 		return "Would you really be happy if you had " + restOfStatement + "?";
 	}
@@ -184,8 +184,8 @@ public class Magpie5
 					.length() - 1);
 		}
 		
-		int psnOfYou = Miscellaneous.findKeyword (statement, "you", 0);
-		int psnOfMe = Miscellaneous.findKeyword (statement, "me", psnOfYou + 3);
+		int psnOfYou = Tools.findKeyword (statement, "you", 0);
+		int psnOfMe = Tools.findKeyword (statement, "me", psnOfYou + 3);
 		
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "What makes you think that I " + restOfStatement + " you?";
@@ -209,8 +209,8 @@ public class Magpie5
 					.length() - 1);
 		}
 		
-		int psnOfI = Miscellaneous.findKeyword (statement, "I", 0);
-		int psnOfYou = Miscellaneous.findKeyword (statement, "you", psnOfI);
+		int psnOfI = Tools.findKeyword (statement, "I", 0);
+		int psnOfYou = Tools.findKeyword (statement, "you", psnOfI);
 		
 		String restOfStatement = statement.substring(psnOfI + 1, psnOfYou).trim();
 		return "Why do you " + restOfStatement + " me?";
@@ -224,7 +224,7 @@ public class Magpie5
 					"You must have been born in the highway, because that's where most accidents happen",
 					"You are so ugly, Hello Kitty said goodbye",
 					};
-		final int NUMBER_OF_RESPONSES = 5;
+		final int NUMBER_OF_RESPONSES = responseList.length;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		return responseList[whichResponse];
@@ -244,7 +244,7 @@ public class Magpie5
 	
 	
 	private String [] randomResponses = {"Interesting, tell me more",
-			"Hmmm that's cool. Could you teach me how to spell joke?",
+			"Hmmm that's cool. Ask me if I can tell a joke.",
 			"Do you really think so?",
 			"You don't say.",
 			//  All you need to do is add lines here

@@ -1,5 +1,5 @@
 //Jia Hua Zhu, AP Comp Sci Java, Miscellaneous tools/ methods library
-public class Miscellaneous {
+public class Tools {
 	//memory section
 	private static String[] memory = new String[3]; //memo stores up to a certain amt strings before it starts rewriting data
 	private static int memSlot = 0; //determines where the string is placed at the memory array
@@ -17,7 +17,7 @@ public class Miscellaneous {
 				if (memory[x] == null) { //passes through null elements to avoid errors
 					continue;
 				}
-				else if (findKeyword(memory[x], "yes") >= 0 //ignores certain words so that they can be used more than once
+				else if (findKeyword(memory[x], "yes") >= 0 //ignores certain main words so that they can be used more than once
 						||findKeyword(memory[x], "no") >= 0
 						||findKeyword(memory[x], "joke") >= 0
 						||findKeyword(memory[x], "date") >= 0) {
